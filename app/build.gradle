@@ -22,10 +22,11 @@ apply plugin: 'com.android.application'
 android {
     signingConfigs {
         config {
-            storeFile file('C:\\home\\hmdm\\keystore\\keystore.jks')
-            keyAlias = 'kiosk'
-            keyPassword 'aGVhZHdpbmRSdWxlS2lvc2s='
-            storePassword 'aGVhZHdpbmRNYWlu'
+            // Use debug keystore for now
+            storeFile file(System.getProperty('user.home') + '/.android/debug.keystore')
+            keyAlias = 'androiddebugkey'
+            keyPassword 'android'
+            storePassword 'android'
         }
     }
     compileSdkVersion 34
